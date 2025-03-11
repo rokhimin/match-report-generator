@@ -1,0 +1,258 @@
+---
+layout: default
+---
+  <section class="section">
+    <div class="container">
+      <h1 class="title has-text-centered">Match Report Generator</h1>
+      <div class="columns">
+        <div class="column is-two-fifths">
+          <article class="message is-link">
+            <div class="message-header">
+              <p>Read the documentation for Paste Format <a href="/documentation">here</a></p>
+              <button class="delete" aria-label="delete"></button>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Paste Format Below</label>
+        <div class="control">
+          <textarea class="textarea" id="formatInput" rows="10" placeholder="Paste the complete format here, including nama_tour, date, ref, streamer, lineup_home, lineup_away, scoring lines..."></textarea>
+        </div>
+      </div>
+      
+      <div class="columns is-desktop">
+        <div class="column is-half-desktop">
+          <div class="box" id="inputForm">
+            <h2 class="subtitle">Customize Data</h2>
+            
+            <div class="field">
+              <label class="label">Tournament Name</label>
+              <div class="control">
+                <input class="input" type="text" id="tournamentName" placeholder="e.g., Yugioh Championship">
+              </div>
+            </div>
+            
+            <div class="field">
+              <label class="label">Tournament Logo</label>
+              <div class="control">
+                <input class="input" type="file" id="tournamentLogo" accept="image/*">
+              </div>
+              <div class="mt-2">
+                <img id="tournamentLogoPreview" class="logo-preview" src="" alt="Tournament Logo Preview">
+              </div>
+            </div>
+            
+            <div class="field">
+              <label class="label">Date and Time</label>
+              <div class="columns is-mobile">
+                <div class="column is-half">
+                  <div class="control">
+                    <input class="input" type="date" id="tournamentDatePicker">
+                  </div>
+                </div>
+                <div class="column is-half">
+                  <div class="control">
+                    <input class="input" type="time" id="tournamentTimePicker">
+                  </div>
+                </div>
+              </div>
+              <p class="help">Formatted date and time: <span id="formattedDateTime">Not set</span></p>
+              <input type="hidden" id="tournamentDate" value="">
+            </div>
+            
+            <div class="columns is-mobile">
+              <div class="column">
+                <div class="field">
+                  <label class="label">Referee</label>
+                  <div class="control">
+                    <input class="input" type="text" id="referee" placeholder="e.g., Dana Sucipto">
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="field">
+                  <label class="label">Streamer</label>
+                  <div class="control">
+                    <input class="input" type="text" id="streamer" placeholder="e.g., whdzera channel">
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="columns is-desktop">
+              <div class="column">
+                <div class="field">
+                  <label class="label">Home Team Name</label>
+                  <div class="control">
+                    <input class="input" type="text" id="homeTeamName" placeholder="e.g., Team A">
+                  </div>
+                </div>
+                
+                <div class="field">
+                  <label class="label">Home Team Logo</label>
+                  <div class="control">
+                    <input class="input" type="file" id="homeTeamLogo" accept="image/*">
+                  </div>
+                  <div class="mt-2">
+                    <img id="homeLogoPreview" class="logo-preview" src="" alt="Home Logo Preview">
+                  </div>
+                </div>
+                
+                <div class="field">
+                  <label class="label">Home Team Lineup</label>
+                  <div class="control">
+                    <textarea class="textarea" id="homeLineup" rows="3" placeholder="e.g., Skylar, Xinn, Kairi, Vynn, Kiboy"></textarea>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="column">
+                <div class="field">
+                  <label class="label">Away Team Name</label>
+                  <div class="control">
+                    <input class="input" type="text" id="awayTeamName" placeholder="e.g., Team B">
+                  </div>
+                </div>
+                
+                <div class="field">
+                  <label class="label">Away Team Logo</label>
+                  <div class="control">
+                    <input class="input" type="file" id="awayTeamLogo" accept="image/*">
+                  </div>
+                  <div class="mt-2">
+                    <img id="awayLogoPreview" class="logo-preview" src="" alt="Away Logo Preview">
+                  </div>
+                </div>
+                
+                <div class="field">
+                  <label class="label">Away Team Lineup</label>
+                  <div class="control">
+                    <textarea class="textarea" id="awayLineup" rows="3" placeholder="e.g., Donkey, Flaptzy, Branz, CW, Oheb"></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="field">
+              <label class="label">Theme</label>
+              <div class="control">
+                <div class="select">
+                  <select id="themeSelector">
+                    <option value="dark-theme">Dark Theme</option>
+                    <option value="light-theme">Light Theme</option>
+                    <option value="blue-theme">Blue Theme</option>
+                    <option value="red-theme">Red Theme</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            
+            <div class="field is-grouped">
+              <div class="control">
+                <button class="button is-link" id="generateBtn">Generate Preview</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="column is-half-desktop">
+          <div class="box" id="previewArea">
+            <h2 class="subtitle">Preview</h2>
+            
+            <div class="preview-container">
+              <div id="scoreboard" class="scoring-board dark-theme">
+                <div class="header">TOURNAMENT NAME</div>
+                <div class="info-row">
+                  <div>REF | Referee Name</div>
+                  <div>Date and Time Here</div>
+                  <div>Streamer | Streamer Name</div>
+                </div>
+                
+                <div class="columns is-gapless is-mobile team-info-container">
+                  <div class="column is-3 team-section">
+                    <div id="homeTeamNameDisplay" class="team-name-display">HOME TEAM</div>
+                    <div class="logo-container">
+                      <img id="homeLogoDisplay" class="team-logo" src="" alt="Home Team Logo">
+                    </div>
+                    <ul id="homeLineupDisplay" class="lineup-list">
+                      <li>Player 1</li>
+                      <li>Player 2</li>
+                      <li>Player 3</li>
+                    </ul>
+                  </div>
+                  <div class="column is-6 tournament-logo-column">
+                    <div class="logo-container">
+                      <img id="tournamentLogoDisplay" class="tournament-logo" src="" alt="Tournament Logo">
+                    </div>
+                  </div>
+                  <div class="column is-3 team-section">
+                    <div id="awayTeamNameDisplay" class="team-name-display">AWAY TEAM</div>
+                    <div class="logo-container">
+                      <img id="awayLogoDisplay" class="team-logo" src="" alt="Away Team Logo">
+                    </div>
+                    <ul id="awayLineupDisplay" class="lineup-list">
+                      <li>Player 1</li>
+                      <li>Player 2</li>
+                      <li>Player 3</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="table-container">
+                  <table class="table is-fullwidth is-narrow" id="scoreTable">
+                    <thead>
+                      <tr>
+                        <th>Player</th>
+                        <th>Deck</th>
+                        <th>Skill</th>
+                        <th class="score-cell" colspan="2">Result</th>
+                        <th>Skill</th>
+                        <th>Deck</th>
+                        <th>Player</th>
+                      </tr>
+                    </thead>
+                    <tbody id="scoreTableBody">
+                      <!-- Sample row -->
+                      <tr>
+                        <td>Zera</td>
+                        <td>DM</td>
+                        <td>TTB</td>
+                        <td class="win-cell score-cell">W</td>
+                        <td class="lose-cell score-cell">L</td>
+                        <td>FD</td>
+                        <td>Hero</td>
+                        <td>Azura</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <div class="footer">
+                  <span id="homeTeamDisplay">HOME TEAM</span> <span id="homeScoreDisplay">0</span> - <span id="awayScoreDisplay">0</span> <span id="awayTeamDisplay">AWAY TEAM</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="field is-grouped mt-4">
+              <div class="control">
+                <button class="button is-link" id="downloadBtn">Download Image</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.querySelectorAll(".message .delete").forEach((button) => {
+        button.addEventListener("click", function () {
+          this.closest(".message").remove();
+        });
+      });
+    });
+  </script>
+
+<script src="{{ site.baseurl }}/assets/match_report_generate.js"></script>

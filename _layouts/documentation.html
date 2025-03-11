@@ -1,0 +1,213 @@
+---
+layout: default
+---
+  <style>
+    /* Dark theme colors */
+    body {
+      background-color: #121212;
+      color: #e4e4e4;
+    }
+    .box {
+      background-color: #1e1e1e;
+      color: #e4e4e4;
+    }
+    .title, .subtitle {
+      color: #ffffff;
+    }
+    .notification.is-light {
+      background-color: #2d2d2d;
+      color: #e4e4e4;
+    }
+    code {
+      background-color: #2a2a2a;
+      color: #4fc3f7;
+    }
+    hr {
+      background-color: #3d3d3d;
+    }
+    .menu-label {
+      color: #4fc3f7;
+    }
+    .menu-list a {
+      color: #e4e4e4;
+    }
+    .menu-list a:hover {
+      background-color: #2a2a2a;
+      color: #4fc3f7;
+    }
+    .menu-list a.is-active {
+      background-color: #4fc3f7;
+      color: #121212;
+    }
+    .navbar {
+      background-color: #1a1a1a;
+    }
+    .navbar-item {
+      color: #e4e4e4;
+    }
+    pre {
+      background-color: #2a2a2a;
+      color: #e4e4e4;
+    }
+    .notification.is-info.is-light {
+      background-color: #1a2933;
+      color: #4fc3f7;
+    }
+    /* Sticky sidebar */
+    .sidebar {
+      position: sticky;
+      top: 20px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+  </style>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        <!-- Left sidebar menu -->
+        <div class="column is-one-quarter">
+          <div class="sidebar box">
+            <aside class="menu">
+              <p class="menu-label">
+                Documentation Sections
+              </p>
+              <ul class="menu-list">
+                <li><a href="#example">Full Example</a></li>
+                <li><a href="#name-tournament">Name Tournament</a></li>
+                <li><a href="#date-time">Date and Time</a></li>
+                <li><a href="#referee">Referee</a></li>
+                <li><a href="#streamer">Streamer</a></li>
+                <li><a href="#home-team">Home Team Name</a></li>
+                <li><a href="#away-team">Away Team Name</a></li>
+                <li><a href="#home-lineup">Home Lineup</a></li>
+                <li><a href="#away-lineup">Away Lineup</a></li>
+                <li><a href="#scoring">Scoring</a></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="column">
+          <div class="box">
+            <div class="content">
+              <div class="field">
+                <h3 class="title is-4">Documentation</h3>
+                <p class="is-italic has-text-grey-light">Last updated: 03/11/2025</p>
+              </div>
+              <hr>
+              
+              <div class="block" id="example">
+                <h5 class="title is-5 mb-2">Full Example</h5>
+                <div class="notification is-info is-light">
+                  <pre><code>name_tour: Yu-Gi-Oh Championship 2025
+date: 11/03/2025 10:55
+ref: Adi Sucipto
+streamer: whdzera channel
+home_team_name: Team Hornet
+away_team_name: HQR Esports
+lineup_home: Hann, Kaiba, Linkin, Miguel, Lientzy
+lineup_away: Wolf, Rizal, Flaptzy, Nand, r7alt
+scoring:
+Linkin Train UT 1 - 0 Hero FD r7alt
+Linkin Train UT 1 - 1 PK PKO r7alt
+Linkin T.G FC 2 - 1 PK PKO r7alt
+Linkin T.G FC 2 - 2 Hero FD Flaptzy
+Miguel BA MOTP 2 - 3 Hero FD Flaptzy
+Miguel Re RER 2 - 4 Hero FD Flaptzy
+Kaiba Hero WIND 2 - 5 Hero FD Flaptzy
+Kaiba BRD SoR 2 - 6 Hero FD Flaptzy
+Lientzy Hero HA 2 - 7 Hero FD Flaptzy
+Lientzy Hero HA 3 - 7 Hero FD Flaptzy
+Lientzy Hero HA 3 - 8 BRD SoR Flaptzy
+Hann Meklord MR 3 - 9 BRD SoR Flaptzy
+Hann Nekroz DSL 3 - 10 BRD SoR Flaptzy</code></pre>
+                </div>
+              </div>
+              
+              <div class="block">
+                <h5 class="title is-5 mb-2">Field Explanations</h5>
+                
+                <div class="field mt-5" id="name-tournament">
+                  <h6 class="title is-6">Name Tournament</h6>
+                  <p class="mb-2">The name of the tournament.</p>
+                  <div class="notification is-light">
+                    <code>name_tour: {name tournament}</code>
+                  </div>
+                </div>
+                
+                <div class="field mt-5" id="date-time">
+                  <h6 class="title is-6">Date and Time</h6>
+                  <p class="mb-2">The date and time of the match report.</p>
+                  <div class="notification is-light">
+                    <code>date: {date} {time}</code>
+                  </div>
+                </div>
+                
+                <div class="field mt-5" id="referee">
+                  <h6 class="title is-6">Referee</h6>
+                  <p class="mb-2">The name of the referee.</p>
+                  <div class="notification is-light">
+                    <code>ref: {name referee}</code>
+                  </div>
+                </div>
+                
+                <div class="field mt-5" id="streamer">
+                  <h6 class="title is-6">Streamer</h6>
+                  <p class="mb-2">The name of the streamer.</p>
+                  <div class="notification is-light">
+                    <code>streamer: {name streamer}</code>
+                  </div>
+                </div>
+                
+                <div class="field mt-5" id="home-team">
+                  <h6 class="title is-6">Home Team Name</h6>
+                  <p class="mb-2">The name of the home team.</p>
+                  <div class="notification is-light">
+                    <code>home_team_name: {name team}</code>
+                  </div>
+                </div>
+                
+                <div class="field mt-5" id="away-team">
+                  <h6 class="title is-6">Away Team Name</h6>
+                  <p class="mb-2">The name of the away team.</p>
+                  <div class="notification is-light">
+                    <code>away_team_name: {name team}</code>
+                  </div>
+                </div>
+                
+                <div class="field mt-5" id="home-lineup">
+                  <h6 class="title is-6">Home Lineup</h6>
+                  <p class="mb-2">The players in the home team lineup.</p>
+                  <div class="notification is-light">
+                    <code>lineup_home: {a, b, c, d, e}</code>
+                  </div>
+                </div>
+                
+                <div class="field mt-5" id="away-lineup">
+                  <h6 class="title is-6">Away Lineup</h6>
+                  <p class="mb-2">The players in the away team lineup.</p>
+                  <div class="notification is-light">
+                    <code>lineup_away: {a, b, c, d, e}</code>
+                  </div>
+                </div>
+                
+                <div class="field mt-5" id="scoring">
+                  <h6 class="title is-6">Scoring</h6>
+                  <p class="mb-2">The scoring table format.</p>
+                  <div class="notification is-light">
+                    <code>scoring:<br>{player home} {deck player home} {skill player home} {score} {deck player away} {skill player away} {player away}</code>
+                  </div>
+                </div>
+                <br>
+                <div class="field">
+                    Back to <a href="/">Match Report Generator</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

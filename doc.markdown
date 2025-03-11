@@ -1,0 +1,4 @@
+---
+layout: documentation
+permalink: '/documentation'
+---

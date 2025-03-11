@@ -1,0 +1,260 @@
+        ::-webkit-scrollbar {
+            width: 12px; 
+        }
+
+
+        ::-webkit-scrollbar-track {
+            background: #2c2c2c;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #484848;
+            border-radius: 10px;
+            border: 3px solid #2c2c2c;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5c5c5c; 
+        }
+
+        ::-webkit-scrollbar-corner {
+            background: #2c2c2c;
+        }
+
+        
+/* Main containers and layout */
+.preview-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    overflow: hidden;
+  }
+  
+  .scoring-board {
+    width: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Header styling */
+  .header {
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  
+  /* Info row styling */
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #aaa;
+    font-size: 0.9rem;
+  }
+  
+  /* Logo styling */
+  .team-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .tournament-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Table styling */
+  .score-cell {
+    text-align: center;
+    padding: 5px;
+    width: 40px;
+  }
+  
+  .win-cell {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .lose-cell {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .team-highlight {
+    color: #ffeb3b;
+  }
+  
+  .special-row {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Footer styling */
+  .footer {
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  /* Table cell styling */
+  #scoreTable th, 
+  #scoreTable td {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px;
+    padding: 5px 3px;
+  }
+  
+  /* Logo preview */
+  .logo-preview {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  /* Theme styling */
+  .dark-theme {
+    background-color: #18191a;
+    color: white;
+  }
+  
+  .light-theme {
+    background-color: #b3b2b2;
+    color: #726e6e;
+  }
+  
+  .blue-theme {
+    background-color: #1a2a3a;
+    color: #eee;
+  }
+  
+  .red-theme {
+    background-color: #3a1a1a;
+    color: #eee;
+  }
+  
+  /* Form and preview areas */
+  #inputForm {
+    margin-bottom: 2rem;
+  }
+  
+  #previewArea {
+    margin: 2rem 0;
+  }
+  
+  /* Team lineup styling */
+  .lineup-list {
+    font-size: 0.8rem;
+    padding: 1px;
+    list-style: none;
+    margin: 0;
+  }
+  
+  .lineup-list li {
+    margin-bottom: 0.1px;
+  }
+  
+  /* Team section styling */
+  .team-section {
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .team-name-display {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 1px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+  
+  /* Custom date-time picker styling */
+  .datetime-field {
+    margin-bottom: 1rem;
+  }
+  
+  /* Make sure the table container is responsive */
+  .table-container {
+    overflow-x: auto;
+    width: 100%;
+  }
+  
+  /* Media queries for mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    .header {
+      font-size: 1.0rem;
+      padding: 8px;
+    }
+    
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid #aaa;
+      font-size: 0.4rem;
+    }
+    
+    .info-row div {
+      margin-bottom: 3px;
+    }
+    
+    .team-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    }
+    
+    .tournament-logo {
+      
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    }
+    
+    .team-name-display {
+    font-weight: bold;
+    font-size: 0.6rem;
+    margin-bottom: 5px;
+    padding: 2px 5px;
+    border-radius: 3px;
+    display: inline-block;
+    }
+    
+    .lineup-list {
+      font-size: 0.7rem;
+    }
+    
+    .footer {
+      font-size: 1.2rem;
+      padding: 8px;
+    }
+    
+    #scoreTable th, 
+    #scoreTable td {
+      font-size: 0.4rem;
+      padding: 3px 2px;
+      max-width: 50px;
+    }
+    
+    .score-cell {
+      width: 30px;
+    }
+  }
