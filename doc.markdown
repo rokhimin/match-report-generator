@@ -1,4 +1,4 @@
 ---
 layout: documentation
-permalink: '/documentation'
+permalink: '/documentation/'
 ---
