@@ -2,10 +2,15 @@
 #ReadMe
 
 #### About
-xxx
+Match report Estafet format generator for game (duel links & master duel)
 
-Live Demo : https://rokhimin.github.io/
+## Library
+- Jekyll
+- Bulma css
+- Javascript Canvas
 
+## Live 
+https://rokhimin.github.io/
 
 ## Contributing
 
